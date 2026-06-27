@@ -1,0 +1,4 @@
+backend/.env
+backend/node_modules/
+collab-editor/node_modules/
+collab-editor/dist/

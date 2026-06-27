@@ -1,0 +1,29 @@
+Day 1 — Learn Socket.io
+Read the official Socket.io docs: 
+"Get started" and "Rooms". 
+Understand the 3 emit patterns — socket.emit, socket.broadcast.emit, io.to(room).emit. 
+
+Then build a throwaway echo server: 
+two browser tabs, one sends a message, both receive it. Kill it once it works. 
+You now know enough Socket.io to build the real thing.
+
+
+Day 2 — Build
+Set up Express + Socket.io + Mongoose + JWT (copy OopsTracker's base). 
+Build the REST routes first (create/list/get document) — 1 hour max, you've done this before. 
+Then write the socket layer: join-document, code-change, disconnect event handlers. 
+Keep current document content in a server-side Map<roomId, content>. 
+
+Debounce DB saves — don't write to MongoDB on every keypress, only after 1 second of inactivity. 
+Add Socket.io middleware for JWT verification.
+
+
+
+Day 3 — Auth, edge cases, frontend
+Lock rooms behind access control — 
+verify the user owns the document before letting them join the room. 
+Handle edge cases: 
+last user disconnects (clear memory), same user opens two tabs (handle duplicate presence), DB save failure (emit error back to socket). 
+Then prompt AI for a minimal frontend — textarea + socket.io-client, two tabs, real-time sync visible. 
+
+Push to GitHub with a README documenting both REST endpoints and socket events.

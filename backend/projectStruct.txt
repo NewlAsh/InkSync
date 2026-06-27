@@ -1,0 +1,26 @@
+collaborative-editor/
+│
+├── config/
+│   └── db.js                 # MongoDB connection setup
+│
+├── models/
+│   ├── User.js               # User Schema (for JWT auth)
+│   └── Document.js           # Document Schema (title, content, owner, etc.)
+│
+├── controllers/
+│   ├── authController.js     # Signup / Login logic
+│   └── docController.js      # REST endpoints (Create, List, Get document)
+│
+├── routes/
+│   ├── authRoutes.js         # /api/auth
+│   └── docRoutes.js          # /api/documents
+│
+├── middlewares/
+│   └── authMiddleware.js     # HTTP JWT verification middleware
+│
+├── sockets/
+│   ├── socketAuth.js         # Socket.io JWT handshake verification middleware
+│   └── documentHandler.js    # Decoupled socket event listeners (join, edit, disconnect)
+│
+├── server.js                 # App entry point (wires Express, HTTP Server, & Socket.io)
+└── .env                      # MONGO_URI, JWT_SECRET, PORT
